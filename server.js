@@ -1,4 +1,4 @@
-import express from "express";
+/*import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import fetch from "node-fetch"; // если Node < 18, иначе можно убрать
@@ -56,6 +56,43 @@ app.post("/order", express.json(), async (req, res) => {
 });
 
 app.options("*", cors())
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});*/
+
+
+
+
+
+
+
+import express from "express";
+import cors from "cors";
+
+const app = express();
+
+// --- CORS: сначала максимально разрешим, чтобы проверить ---
+app.use(cors()); // временно всем разрешаем, чтобы убедиться что работает
+// Если всё заработает — сузим origin ниже.
+
+app.use(express.json());
+
+// Простейшие маршруты
+app.get("/", (_req, res) => {
+    res.json({ ok: true, msg: "Root alive" });
+});
+
+// preflight на корень и /order
+app.options("/", cors());
+app.options("/order", cors());
+
+// основной POST
+app.post("/order", (req, res) => {
+    console.log("ORDER BODY:", req.body);
+    res.json({ ok: true, received: req.body });
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
