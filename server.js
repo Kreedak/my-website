@@ -74,7 +74,11 @@ import cors from "cors";
 const app = express();
 
 // --- CORS: сначала максимально разрешим, чтобы проверить ---
-app.use(cors()); // временно всем разрешаем, чтобы убедиться что работает
+app.use(cors({
+    origin: "https://kreedak.github.io",
+    methods: ["GET","POST","OPTIONS"],
+    allowedHeaders: ["Content-Type"]
+})); // временно всем разрешаем, чтобы убедиться что работает
 // Если всё заработает — сузим origin ниже.
 
 app.use(express.json());
