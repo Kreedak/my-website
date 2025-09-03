@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    background: linear-gradient(to left, rgb(255, 152, 93), rgb(255, 99, 9), rgb(255, 152, 93));
+}
+header h1 {
+    font-weight: 100;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px;
+    gap: 20px;
+}
+.pizza {
+    width: 30%;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>DUNDUK</title>
+</head>
+<body>
+    <div class="pizzaDetails">
+        <img id="pizzaImg" src="" alt="">
+        <h2 id="pizzaName"></h2>
+        <p>Цена: <span id="pizzaPrice"></span></p>
+        <p>Размер: <span id="pizzaSize"></span></p>
+        <p>Состав: <span id="pizzaIngredients"></span></p>
+
+        <label for="pizzaSizeSelect">Выберите размер:</label>
+        <select id="pizzaSizeSelect">
+            <option value="small">Маленькая (20см)</option>
+            <option value="medium">Средняя (30см)</option>
+            <option value="large">Большая (40см)</option>
+        </select>
+    </div>
+    <h2>Заказ пиццы</h2>
+    <form id="orderForm">
+        <input type="text" id="name" placeholder="Ваше имя" required>
+        <input type="text" id="phone" placeholder="Телефон" required>
+        <input type="text" id="address" placeholder="Адрес доставки" required>
+        <button id="orderBtn" type="submit">Заказать</button>
+    </form>
+    <script src="pizzaScript.js"></script>
+</body>
+</html>
