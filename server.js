@@ -7,7 +7,6 @@ import { fileURLToPath } from "url";
 
 //const cors = require("cors");
 const app = express();
-const PORT = 3000;
 
 const TOKEN = "8310915910:AAEEFuc_k3UzuvFyFt-c-bhhRJ3e-nVB5-I";
 //const CHAT_ID = "6094425741";
@@ -16,7 +15,9 @@ const CHAT_ID = "6094425741";
 app.use(express.static("public"));
 
 app.use(cors({
-    origin: "https://kreedak.github.io"
+    origin: "https://kreedak.github.io",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"]
 }));
 
 // Отдаём index.html при заходе на /
@@ -54,6 +55,9 @@ app.post("/order", express.json(), async (req, res) => {
     }
 });
 
-/*app.listen(PORT, () => {
-console.log(`✅ Сервер запущен на http://localhost:${PORT}`);
-});*/
+app.options("*", cors())
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
