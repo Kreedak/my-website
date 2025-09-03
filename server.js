@@ -121,7 +121,7 @@ const app = express();
 const TOKEN = process.env.BOT_TOKEN;
 const CHAT_ID = process.env.CHAT_ID;
 
-app.use(express.static("public"));
+app.use(express.static("docs"));
 
 app.use(cors({
     origin: "https://kreedak.github.io",
@@ -132,7 +132,7 @@ app.use(cors({
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+    res.sendFile(path.join(__dirname, "docs", "index.html"));
 });
 
 app.post("/order", async (req, res) => {
