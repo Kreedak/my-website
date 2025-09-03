@@ -13,6 +13,9 @@ const CHAT_ID = "6094425741";
 
 app.use(express.static("public"));
 
+app.use(cors({
+    origin: "https://kreedak.github.io"
+}));
 
 // Отдаём index.html при заходе на /
 app.get("/", (req, res) => {
