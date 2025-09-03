@@ -1,9 +1,11 @@
 import express from "express";
+import cors from "cors";
 import bodyParser from "body-parser";
 import fetch from "node-fetch"; // если Node < 18, иначе можно убрать
 import path from "path";
 import { fileURLToPath } from "url";
 
+//const cors = require("cors");
 const app = express();
 const PORT = 3000;
 
