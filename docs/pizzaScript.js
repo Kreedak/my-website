@@ -59,7 +59,7 @@ document.querySelector("#orderForm").addEventListener("submit", async (e) => {
     console.log("Новый заказ:", order);
 
     // Отправка на сервер
-    await fetch("https://my-website-uy8a.onrender.com", {
+    await fetch("https://my-website-uy8a.onrender.com/order", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(order)
