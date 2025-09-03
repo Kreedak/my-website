@@ -52,6 +52,6 @@ app.post("/order", express.json(), async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
+/*app.listen(PORT, () => {
 console.log(`✅ Сервер запущен на http://localhost:${PORT}`);
-});
+});*/
