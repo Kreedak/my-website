@@ -1,8 +1,8 @@
 {
-  "name": "exercise-1",
+  "name": "my-website",
   "version": "1.0.0",
   "description": "",
-  "main": "pizza-order.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
