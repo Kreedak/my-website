@@ -60,7 +60,7 @@ document.querySelector("#orderForm").addEventListener("submit", async (e) => {
         phone: document.querySelector("#phone").value,
         address: document.querySelector("#address").value,
         pizza: pizza.name, // пицца из выбора
-        size: pizzaSizeSelect.options[pizzaSizeSelect.selectedIndex].text,
+        size: selectedSizeText,
         price: pizzaPriceEl.textContent
     };
 
