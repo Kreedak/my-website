@@ -8,27 +8,33 @@
     <title>DUNDUK</title>
 </head>
 <body>
-    <div class="pizzaDetails">
-        <img id="pizzaImg" src="" alt="">
-        <h2 id="pizzaName"></h2>
-        <p>Цена: <span id="pizzaPrice"></span></p>
-        <p>Размер: <span id="pizzaSize"></span></p>
-        <p>Состав: <span id="pizzaIngredients"></span></p>
+    <main>
+        <div class="pizzaDetails">
+            <img id="pizzaImg" src="" alt="">
+            <h2 id="pizzaName"></h2>
+            <p>Цена: <span id="pizzaPrice"></span></p>
+            <p>Размер: <span id="pizzaSize"></span></p>
+            <p>Состав: <span id="pizzaIngredients"></span></p>
+            
+            <div class="pizza-size-select" id="pizza-size-select">
+                <input class="pizza-size" type="radio" id="small" name="size" value="small" checked>
+                <label for="small">Маленькая</label>
 
-        <label for="pizzaSizeSelect">Выберите размер:</label>
-        <select id="pizzaSizeSelect">
-            <option value="small">Маленькая (20см)</option>
-            <option value="medium">Средняя (30см)</option>
-            <option value="large">Большая (40см)</option>
-        </select>
-    </div>
-    <h2>Заказ пиццы</h2>
-    <form id="orderForm">
-        <input type="text" id="name" placeholder="Ваше имя" required>
-        <input type="text" id="phone" placeholder="Телефон" required>
-        <input type="text" id="address" placeholder="Адрес доставки" required>
-        <button id="orderBtn" type="submit">Заказать</button>
-    </form>
-    <script src="pizzaScript.js"></script>
+                <input class="pizza-size" type="radio" id="medium" name="size" value="medium">
+                <label for="medium">Средняя</label>
+
+                <input class="pizza-size" type="radio" id="large" name="size" value="large">
+                <label for="large">Большая</label>
+            </div>
+        </div>
+        <h2>Заказ пиццы</h2>
+        <form id="orderForm">
+            <input type="text" id="name" placeholder="Ваше имя" required>
+            <input type="text" id="phone" placeholder="Телефон" required>
+            <input type="text" id="address" placeholder="Адрес доставки" required>
+            <button id="orderBtn" type="submit">Заказать</button>
+        </form>
+    </main>
+        <script src="pizzaScript.js"></script>
 </body>
 </html>

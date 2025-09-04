@@ -1,14 +1,14 @@
 const pizzas = [
-    {id: "1", name: "Пепперони", price: 600, size: "30см", ingredients: "сыр, пепперони", img: "image/pepperoni.png"},
-    {id: "2", name: "Маргарита", price: 500, size: "30см", ingredients: "сыр, томаты", img: "image/margarita.png"},
-    {id: "3", name: "Сырный цыпленок", price: 550, size: "30см", ingredients: "сыр, ветчина, ананас", img: "image/chicken.png"},
-    {id: "4", name: "4 Сыра", price: 570, size: "30см", ingredients: "моцарелла пармезан голубой сыр Балжан казявка", img: "image/four_cheese.png"}
+    {id: "1", name: "Пепперони", price: 600, size: "30см", ingredients: "Состав:масло мука сухой тип дрожжей соль сахар вода лук томат растительное масло чеснок перец соль базилик моцарелла", img: "image/pepperoni.png"},
+    {id: "2", name: "Маргарита", price: 500, size: "30см", ingredients: "Состав:Томатный соус, моцарелла, оливковое масло, помидоры, базилик, вода, мука, дрожжи, соль, сахар, помидоры, специи", img: "image/margarita.png"},
+    {id: "3", name: "Сырный цыпленок", price: 550, size: "30см", ingredients: "Состав:Томатный соус, моцарелла, оливковое масло, курица, базилик, вода, мука, дрожжи, соль, сахар, специи", img: "image/chicken.png"},
+    {id: "4", name: "4 Сыра", price: 570, size: "30см", ingredients: "Состав:моцарелла , пармезан , эмменталь ,горгонзола вода, мука, дрожжи, соль, томатный соус", img: "image/four_cheese.png"}
 ];
 
 const selectedId = localStorage.getItem("selectedPizza");
 const pizza = pizzas.find(p => p.id === selectedId);
 
-const pizzaSizeSelect = document.querySelector("#pizzaSizeSelect");
+const pizzaSizeSelect = document.querySelector("#pizza-size-select");
 const pizzaSizeEl = document.querySelector("#pizzaSize");
 const pizzaPriceEl = document.querySelector("#pizzaPrice");
 
@@ -24,21 +24,29 @@ if (pizza) {
 
     let basePrice = pizza.price;
 
+
     function updatePizzaInfo() {
-        let selectedSize = pizzaSizeSelect.value;
+        // ищем выбранный радио
+        let selectedRadio = document.querySelector('input[name="size"]:checked');
+        if (!selectedRadio) return;
+
+        let selectedSize = selectedRadio.value;
         let newPrice = basePrice;
 
         if (selectedSize === "small") newPrice = Math.round(basePrice * 0.8);
         if (selectedSize === "medium") newPrice = basePrice;
         if (selectedSize === "large") newPrice = Math.round(basePrice * 1.5);
 
-        // показываем новый размер и цену
-        let selectedSizeText = pizzaSizeSelect.options[pizzaSizeSelect.selectedIndex].text;
-        pizzaSizeEl.textContent = selectedSizeText;
+        // текст размера из label (по красоте)
+        let selectedLabel = document.querySelector(`label[for="${selectedRadio.id}"]`);
+
+        pizzaSizeEl.textContent = selectedLabel.textContent;
         pizzaPriceEl.textContent = newPrice + "₸";
     }
 
-    pizzaSizeSelect.addEventListener("change", updatePizzaInfo);
+    document.querySelectorAll('input[name="size"]').forEach(radio => {
+        radio.addEventListener("change", updatePizzaInfo);
+    });
 
     updatePizzaInfo();
 }
