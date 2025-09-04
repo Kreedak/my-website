@@ -55,6 +55,9 @@ console.log("pizza:", pizza.name);
 document.querySelector("#orderForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const selectedRadio = document.querySelector('input[name="size"]:checked');
+    const selectedSizeText = selectedRadio ? document.querySelector(`label[for="${selectedRadio.id}"]`).textContent : '';
+
     const order = {
         name: document.querySelector("#name").value,
         phone: document.querySelector("#phone").value,
