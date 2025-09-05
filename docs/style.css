@@ -121,8 +121,12 @@ nav {
         margin: 32px;
     }
     .nav-links {
-        gap: 8px;
-}
+        gap: 2px;
+    }
+    .pizza-size-select {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /*.pizzaDetails {
