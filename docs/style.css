@@ -121,11 +121,15 @@ nav {
         margin: 32px;
     }
     .nav-links {
-        gap: 2px;
+        gap: 4px;
     }
     .pizza-size-select {
         display: flex;
         flex-direction: column;
+    }
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 5px 10px;
     }
 }
 
