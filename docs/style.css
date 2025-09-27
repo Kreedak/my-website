@@ -228,8 +228,10 @@ form#orderForm input[type="text"]:focus {
 }
 
 form#orderForm button {
+    position: relative;
+    overflow: hidden;
     padding: 14px;
-    background: linear-gradient(90deg, #e74c3c 60%, #fcb69f 100%);
+    background: #ff6b00;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -240,9 +242,14 @@ form#orderForm button {
     transition: background 0.2s, transform 0.2s;
 }
 
-form#orderForm button:hover {
-    background: linear-gradient(90deg, #fcb69f 0%, #e74c3c 100%);
-    transform: scale(1.04);
+.ripple {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    animation: ripple 0.7s linear;
+    transform: scale(0);
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 main h2 {
@@ -251,6 +258,13 @@ main h2 {
     color: #e74c3c;
     font-size: 1.6rem;
     font-weight: 700;
+}
+
+@keyframes ripple {
+    to {
+        opacity: 0;
+        transform: scale(3);
+    }
 }
 
 @keyframes fadeIn {

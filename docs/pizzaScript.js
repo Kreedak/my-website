@@ -76,3 +76,20 @@ document.querySelector("#orderForm").addEventListener("submit", async (e) => {
         body: JSON.stringify(order)
     });
 });
+
+const btn = document.querySelector('#orderBtn');
+
+btn.addEventListener('click', function (e) {
+    const circle = document.createElement('span');
+    const rect = btn.getBoundingClientRect();
+    const size = Math.max(rect.width,rect.height);
+
+    circle.className = 'ripple';
+    circle.style.width = circle.style.height = size + 'px';
+    circle.style.left = (e.clientX - rect.left - size / 2) + 'px';
+    circle.style.top = (e.clientY - rect.top - size / 2) + 'px';
+
+    btn.appendChild(circle);
+
+    circle.addEventListener('animationend', () => circle.remove());
+});
