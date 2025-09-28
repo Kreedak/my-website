@@ -78,7 +78,7 @@ document.querySelector("#orderForm").addEventListener("submit", async (e) => {
 
     const result = await respons.json();
 
-    console.log("qwertyuiop",result);
+    console.log("qwertyuiop:", result);
 
     if (result.success) {
         openModal("successModal");
