@@ -6,11 +6,12 @@
 
 header {
     position: relative;
-    background: #222 url('https://static.vecteezy.com/system/resources/previews/024/715/609/non_2x/freshly-baked-pizza-on-rustic-wooden-table-generated-by-ai-free-photo.jpg') center/cover no-repeat; /* Замените 'pizza.jpg' на путь к вашей картинке пиццы */
+    background: #222 url('https://static.vecteezy.com/system/resources/previews/024/715/609/non_2x/freshly-baked-pizza-on-rustic-wooden-table-generated-by-ai-free-photo.jpg') center/cover no-repeat;
+    /* Замените 'pizza.jpg' на путь к вашей картинке пиццы */
     color: #fff;
     padding: 40px 0;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     overflow: hidden;
 }
 
@@ -18,7 +19,8 @@ header::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.5); /* Затемнение */
+    background: rgba(0, 0, 0, 0.5);
+    /* Затемнение */
     z-index: 1;
 }
 
@@ -42,7 +44,7 @@ main {
     margin: 40px auto;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
     padding: 32px;
 }
 
@@ -69,13 +71,13 @@ img {
     margin: 24px 0;
     background: #eee;
     border-radius: 30px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     transition: ease 0.25s;
 }
 
 .pizza:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 nav {
@@ -105,28 +107,33 @@ nav {
 }
 
 .nav-links a:hover {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 @media (max-width: 600px) {
     main {
         padding: 16px;
     }
+
     header h1 {
         font-size: 3.5rem;
     }
+
     .gallery {
         grid-template-columns: 1fr;
         gap: 16px;
         margin: 32px;
     }
+
     .nav-links {
         gap: 4px;
     }
+
     .pizza-size-select {
         display: flex;
         flex-direction: column;
     }
+
     .nav-links a {
         font-size: 0.8rem;
         padding: 5px 10px;
@@ -149,7 +156,7 @@ nav {
     align-items: center;
     background: #e7e7e7;
     border-radius: 32px;
-    box-shadow: 0 2px 12px rgba(231,76,60,0.25);
+    box-shadow: 0 2px 12px rgba(231, 76, 60, 0.25);
     border: #ff6b00 4px solid;
     padding: 32px 24px;
     margin-bottom: 32px;
@@ -159,7 +166,7 @@ nav {
 .pizzaDetails img {
     width: 50%;
     border-radius: 24px;
-    box-shadow: 0 1px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
     margin-bottom: 24px;
 }
 
@@ -181,7 +188,8 @@ nav {
 }
 
 .pizza-size-select input {
-    display: none; /* скрываем стандартные кружки */
+    display: none;
+    /* скрываем стандартные кружки */
 }
 
 .pizza-size-select label {
@@ -194,7 +202,7 @@ nav {
     transition: all 0.2s;
 }
 
-.pizza-size-select input:checked + label {
+.pizza-size-select input:checked+label {
     background: #ff6b00;
     color: #fff;
     box-shadow: 0 4px 10px rgba(255, 107, 0, 0.4);
@@ -206,7 +214,7 @@ form#orderForm {
     background: #fff8f4;
     padding: 32px 24px;
     border-radius: 24px;
-    box-shadow: 0 2px 12px rgba(231,76,60,0.08);
+    box-shadow: 0 2px 12px rgba(231, 76, 60, 0.08);
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -238,7 +246,7 @@ form#orderForm button {
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(231,76,60,0.12);
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.12);
     transition: background 0.2s, transform 0.2s;
 }
 
@@ -263,7 +271,7 @@ main h2 {
 .modal-background {
     position: fixed;
     opacity: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     left: 0;
     top: 0;
     width: 100%;
@@ -273,31 +281,46 @@ main h2 {
     align-items: center;
     pointer-events: none;
     transition: 0.3s ease;
-    z-index: 999;
+    z-index: 15;
 }
 
 .modal-content {
     background: white;
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: 85%;
-    height: 85%;
-    border-radius: 32px;
+    gap: 1rem;
+    width: clamp(300px, 90%, 600px);
+    min-height: auto;
+    border-radius: 16px;
     padding: 20px;
     text-align: center;
     transform: scale(0.7);
     transition: 0.3s ease;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
 .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
-    float: right;
-    font-size: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(18px, 2vw, 28px);
+    width: 32px;
+    height: 32px;
     color: #3f3f3f;
-    align-self: flex-end;
-    margin: 20px;
+    background: #f1f1f1;
+    border-radius: 50%;
+    transition: background 0.2s ease;
 }
+
+.close:hover {
+    background: #ddd;
+}
+
 
 .close:hover {
     opacity: 0.8;
@@ -314,28 +337,28 @@ main h2 {
 }
 
 .modal-content-p {
-    font-size: 5vh;
+    font-size: clamp(16px, 2.5vw, 22px);
     font-weight: bold;
-    margin-top: 5vh;
+    margin: 1rem 0;
+}
+
+#modal-content-success,
+#modal-content-error {
+    border-radius: 12px;
+    font-size: clamp(18px, 3vw, 28px);
+    color: white;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
 }
 
 #modal-content-success {
-    background: #7bff00;
-    border-radius: 10px;
-    font-size: 10vw;
-    color: white;
-    margin: 5%;
-    padding: 5%;
+    background: #28a745;
 }
 
 #modal-content-error {
-    background: #ff0000;
-    border-radius: 10px;
-    font-size: 10vw;
-    color: white;
-    margin: 5%;
-    padding: 5%;
+    background: #dc3545;
 }
+
 
 @keyframes ripple {
     to {
@@ -345,10 +368,25 @@ main h2 {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-30px);}
-    to { opacity: 1; transform: translateY(0);}
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px);}
-    to { opacity: 1; transform: translateY(0);}
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
