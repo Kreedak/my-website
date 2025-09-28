@@ -280,8 +280,8 @@ main h2 {
     background: white;
     display: flex;
     flex-direction: column;
-    width: 70%;
-    height: 70%;
+    width: 85%;
+    height: 85%;
     border-radius: 32px;
     padding: 20px;
     text-align: center;
@@ -296,6 +296,7 @@ main h2 {
     font-size: 5vh;
     color: #3f3f3f;
     align-self: flex-end;
+    margin: 20px;
 }
 
 .close:hover {
@@ -321,7 +322,7 @@ main h2 {
 #modal-content-success {
     background: #7bff00;
     border-radius: 10px;
-    font-size: 10vh;
+    font-size: 10vw;
     color: white;
     margin: 5%;
     padding: 5%;
@@ -330,7 +331,7 @@ main h2 {
 #modal-content-error {
     background: #ff0000;
     border-radius: 10px;
-    font-size: 10vh;
+    font-size: 10vw;
     color: white;
     margin: 5%;
     padding: 5%;
