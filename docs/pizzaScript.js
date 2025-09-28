@@ -70,12 +70,27 @@ document.querySelector("#orderForm").addEventListener("submit", async (e) => {
     console.log("Новый заказ:", order);
 
     // Отправка на сервер
-    await fetch("https://my-website-uy8a.onrender.com/order", {
+    const respons = await fetch("https://my-website-uy8a.onrender.com/order", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(order)
     });
+
+    const result = await respons.json();
+
+    if (result.success) {
+        openModal("successModal");
+    }
+    else openModal("errorModal");
 });
+
+function openModal(id) {
+    document.getElementById(id).classList.add("show");
+}
+
+function closeModal(id) {
+    document.getElementById(id).classList.remove("show");
+}
 
 const btn = document.querySelector('#orderBtn');
 
