@@ -293,8 +293,9 @@ main h2 {
 .close {
     cursor: pointer;
     float: right;
-    font-size: 24px;
+    font-size: 3vh;
     color: #3f3f3f;
+    align-self: flex-end;
 }
 
 .close:hover {
