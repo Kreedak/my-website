@@ -307,6 +307,7 @@ main h2 {
 
 .modal-background.show .modal-content {
     transform: scale(1);
+    opacity: 1;
 }
 
 #modal-content-success {
