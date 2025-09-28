@@ -279,9 +279,10 @@ main h2 {
 .modal-content {
     background: white;
     display: flex;
+    flex-direction: column;
     width: 70%;
     height: 70%;
-    border-radius: 10%;
+    border-radius: 32px;
     padding: 20px;
     text-align: center;
     transform: scale(0.7);
@@ -310,12 +311,27 @@ main h2 {
     opacity: 1;
 }
 
+.modal-content-p {
+    font-size: 5vh;
+    font-weight: bold;
+}
+
 #modal-content-success {
     background: #7bff00;
+    border-radius: 10px;
+    font-size: 10vh;
+    color: white;
+    margin: 5%;
+    padding: 5%;
 }
 
 #modal-content-error {
     background: #ff0000;
+    border-radius: 10px;
+    font-size: 10vh;
+    color: white;
+    margin: 5%;
+    padding: 5%;
 }
 
 @keyframes ripple {
