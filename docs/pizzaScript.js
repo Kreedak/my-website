@@ -78,6 +78,8 @@ document.querySelector("#orderForm").addEventListener("submit", async (e) => {
 
     const result = await respons.json();
 
+    console.log(result);
+
     if (result.success) {
         openModal("successModal");
     }
