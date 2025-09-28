@@ -80,14 +80,26 @@ document.querySelector("#orderForm").addEventListener("submit", async (e) => {
 
     console.log("qwertyuiop:", result);
 
+    console.log("Проверка перед открытием модалки");
     if (result.success) {
+        console.log("Success Mодалка должна открытся");
         openModal("successModal");
     }
-    else openModal("errorModal");
+    else {
+        openModal("errorModal");
+        console.log("Error Mодалка должна открытся");
+    }
 });
 
 function openModal(id) {
-    document.getElementById(id).classList.add("show");
+    const modal = document.getElementById(id);
+    if (!modal) {
+        console.error("Модалка не найдена:", id);
+        return;
+    }
+
+    modal.classList.add("show");
+    console.log("Модалка открыта:", id);
 }
 
 function closeModal(id) {
