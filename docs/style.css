@@ -293,7 +293,7 @@ main h2 {
 .close {
     cursor: pointer;
     float: right;
-    font-size: 10vh;
+    font-size: 20px;
     color: #3f3f3f;
     align-self: flex-end;
 }
@@ -315,6 +315,7 @@ main h2 {
 .modal-content-p {
     font-size: 5vh;
     font-weight: bold;
+    margin-top: 5vh;
 }
 
 #modal-content-success {
