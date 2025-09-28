@@ -293,7 +293,7 @@ main h2 {
 .close {
     cursor: pointer;
     float: right;
-    font-size: 20px;
+    font-size: 50px;
     color: #3f3f3f;
     align-self: flex-end;
 }
