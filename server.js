@@ -46,7 +46,7 @@ app.post("/order", async (req, res) => {
         const data = await response.json();
         console.log("Ответ от Telegram:", data);
 
-    res.json({ success: true, message: "Заказ получен!" });
+        res.json({ success: true, message: "Заказ получен!" });
     } 
     catch (error) {
         console.error("Ошибка при отправке в Telegram:", error);
