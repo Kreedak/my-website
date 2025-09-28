@@ -305,7 +305,7 @@ main h2 {
     pointer-events: auto;
 }
 
-.modal-background.show .modal-content {
+.modal-background.show .modal-content.show {
     transform: scale(1);
     opacity: 1;
 }
