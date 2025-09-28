@@ -100,10 +100,11 @@ function openModal(id) {
 
     modal.classList.add("show");
     console.log("Модалка открыта:", id);
-}
 
-function closeModal(id) {
-    document.getElementById(id).classList.remove("show");
+    const closeBtn = document.querySelector(".close");
+    closeBtn.onclick = () => {
+        modal.classList.remove("show");
+    };
 }
 
 const btn = document.querySelector('#orderBtn');
