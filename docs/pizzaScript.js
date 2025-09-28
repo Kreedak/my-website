@@ -102,7 +102,8 @@ function openModal(id) {
     console.log("Модалка открыта:", id);
 
     const closeBtn = modal.querySelector(".close");
-    (modal.onclick || closeBtn.onclick) = () => {
+    const modal_background = document.querySelector(".modal-background");
+    (modal_background.onclick || closeBtn.onclick) = () => {
         modal.classList.remove("show");
     };
 }
