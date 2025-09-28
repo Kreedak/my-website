@@ -101,7 +101,7 @@ function openModal(id) {
     modal.classList.add("show");
     console.log("Модалка открыта:", id);
 
-    const closeBtn = modal.querySelector(".close");;
+    const closeBtn = modal.querySelector(".close");
     closeBtn.onclick = () => {
         modal.classList.remove("show");
     };
