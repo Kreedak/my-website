@@ -126,6 +126,4 @@ btn.addEventListener('click', function (e) {
     btn.appendChild(circle);
 
     circle.addEventListener('animationend', () => circle.remove());
-
-    openModal("successModal");
 });
